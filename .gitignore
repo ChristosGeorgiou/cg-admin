@@ -4,5 +4,4 @@
 *.zip
 
 # Folders
-bower_components/
 node_modules/

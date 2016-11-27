@@ -34,7 +34,7 @@ gulp.task('sass', function () {
 
 gulp.task('angular', function () {
 
-	return gulp.src('./src/**/*.js')
+	return gulp.src('./scripts/**/*.js')
 		.pipe(angularFilesort())
 		.pipe(sourcemaps.init())
 		.pipe(concat('app.min.js', {
