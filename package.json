@@ -1,0 +1,23 @@
+{
+	"name": "admin-cg",
+	"version": "0.2.0",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ChristosGeorgiou/admin-cg.git"
+	},
+	"license": "MIT",
+	"depentencies": {
+		"bootstrap-sass": "^3.3.7"
+	},
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-angular-filesort": "^1.1.1",
+		"gulp-clean-css": "^2.0.13",
+		"gulp-concat": "^2.6.1",
+		"gulp-ng-annotate": "^2.0.0",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^2.3.2",
+		"gulp-sourcemaps": "^1.9.1",
+		"gulp-uglify": "^2.0.0"
+	}
+}
