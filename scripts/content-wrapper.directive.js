@@ -5,8 +5,9 @@
         .module('cg.admin')
         .directive('contentWrapper', contentWrapper)
 
-    contentWrapper.$inject = ['$window', '$timeout'];
-    function contentWrapper($window, $timeout) {
+    contentWrapper.$inject = ['$window'];
+
+    function contentWrapper($window) {
 
         var directive = {
             restrict: 'C',
@@ -15,21 +16,27 @@
 
         return directive;
 
-        function link(scope, wrapper, attrs) {
+        function link(scope, element, attrs) {
 
-            fix(wrapper);
+            fix(element);
 
             angular.element($window)
                 .bind('resize', function () {
-                    fix(wrapper);
+                    fix(element);
                 });
 
         }
 
         function fix(element) {
 
+            var header = 35;
+            if (window.innerWidth < 767) {
+                header *= 2;
+            }
+            
             element.css({
-                height: window.innerHeight + 'px'
+                marginTop: header + 'px',
+                height: window.innerHeight - header + 'px'
             });
 
         }
