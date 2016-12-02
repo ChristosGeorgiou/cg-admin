@@ -19,20 +19,20 @@
     background: #ddd;
     left: 31px;
     margin: 0;
-    @include border-radius-same(2px);
+    @include border-radius(2px);
   }
 
   > li {
     position: relative;
     margin-right: 10px;
     margin-bottom: 15px;
-    @include clearfix;
+    @include clearfix();
 
     // The content
     > .timeline-item {
       @include box-shadow($box-boxshadow);
-      @include border-radius-same($box-border-radius);
-      margin-top: 0px;
+      @include border-radius($box-border-radius);
+      margin-top: 0;
       background: #fff;
       color: #444;
       margin-left: 60px;
@@ -65,18 +65,6 @@
 
     }
 
-    // Time label
-    &.time-label {
-      > span {
-        font-weight: 600;
-        padding: 5px;
-        display: inline-block;
-        background-color: #fff;
-
-        @include border-radius-same(4px);
-      }
-    }
-
     // The icons
     > .fa,
     > .glyphicon,
@@ -103,7 +91,7 @@
       display: inline-block;
       background-color: #fff;
 
-      @include border-radius-same(4px);
+      @include border-radius(4px);
     }
   }
 }

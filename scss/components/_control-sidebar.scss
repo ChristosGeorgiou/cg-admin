@@ -46,7 +46,7 @@
   .control-sidebar {
     right: 0;
   }
-  @media(min-width: $screen-sm) {
+  @media (min-width: $screen-sm) {
     .content-wrapper,
     .right-side,
     .main-footer {
@@ -60,12 +60,14 @@
   > li {
     &:first-of-type > a {
       &,
-      &:hover {
-        border-left-width: 0!important;
+      &:hover,
+      &:focus {
+        border-left-width: 0;
       }
     }
     > a {
-      @include border-radius-same(0);
+      @include border-radius(0);
+
       //Hover and active states
       &,
       &:hover {
@@ -122,7 +124,7 @@
   padding: 0;
   margin: 0 -15px;
   > li > a {
-    @include clearfix;
+    @include clearfix();
     display: block;
     padding: 10px 15px;
     > .control-sidebar-subheading {
@@ -162,7 +164,7 @@
     background: $sidebar-dark-bg;
   }
   // Sidebar tabs
-  .control-sidebar-tabs {
+  .nav-tabs.control-sidebar-tabs {
     border-bottom: darken($sidebar-dark-bg, 3%);
     > li {
       > a {
@@ -170,13 +172,14 @@
         color: $sidebar-dark-color;
         //Hover and active states
         &,
-        &:hover {
-          border-left-color: darken($sidebar-dark-bg, 7%)!important;
-          border-bottom-color: darken($sidebar-dark-bg, 7%)!important;
+        &:hover,
+        &:focus {
+          border-left-color: darken($sidebar-dark-bg, 7%);
+          border-bottom-color: darken($sidebar-dark-bg, 7%);
         }
         &:hover,
-          &:focus,
-          &:active {
+        &:focus,
+        &:active {
           background: darken($sidebar-dark-bg, 3%);
         }
         &:hover {
@@ -188,8 +191,8 @@
         > a {
           &,
           &:hover,
-            &:focus,
-            &:active {
+          &:focus,
+          &:active {
             background: $sidebar-dark-bg;
             color: #fff;
           }
@@ -229,7 +232,7 @@
     border-left: 1px solid $gray;
   }
   // Sidebar tabs
-  .control-sidebar-tabs {
+  .nav-tabs.control-sidebar-tabs {
     border-bottom: $gray;
     > li {
       > a {
@@ -237,13 +240,14 @@
         color: $sidebar-light-color;
         //Hover and active states
         &,
-        &:hover {
-          border-left-color: $gray!important;
-          border-bottom-color: $gray!important;
+        &:hover,
+        &:focus {
+          border-left-color: $gray;
+          border-bottom-color: $gray;
         }
         &:hover,
-          &:focus,
-          &:active {
+        &:focus,
+        &:active {
           background: darken($sidebar-light-bg, 3%);
         }
       }
@@ -252,8 +256,8 @@
         > a {
           &,
           &:hover,
-            &:focus,
-            &:active {
+          &:focus,
+          &:active {
             background: $sidebar-light-bg;
             color: #111;
           }

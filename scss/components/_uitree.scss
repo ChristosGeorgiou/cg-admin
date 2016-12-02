@@ -1,0 +1,68 @@
+﻿//colors
+$color_white_lilac_approx: #f8faff;
+$color_geyser_approx: #dae2ea;
+$color_bali_hai_approx: #7c9eb2;
+$color_boston_blue_approx: #438eb9;
+$color_black_haze_approx: #f4f6f7;
+$color_mercury_approx: #dce2e8;
+$color_alice_blue_approx: #f0f9ff;
+$color_tiara_approx: #bed2db;
+$color_nevada_approx: #687074;
+$white: #fff;
+$color_vanilla_ice_approx: #f2dede;
+
+.angular-ui-tree-handle {
+    color: #666;
+    margin-right: 10px;
+
+    &:hover {
+        color: #111;
+    }
+}
+
+.angular-ui-tree-placeholder {
+    /*background: #FFF;*/
+    border: 2px dashed $primary;
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+}
+
+.group-title {
+    background-color: $color_nevada_approx !important;
+    color: $white !important;
+}
+
+.tree-node {
+    border: 1px solid #EAEAEA;
+    border-left: 3px solid $primary;
+    -moz-border-radius: 5px 0 0 5px;
+    -webkit-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px;
+    background: #FAFAFA;
+    color: #111;
+}
+
+.nodrop {
+    background-color: $color_vanilla_ice_approx;
+}
+
+.tree-node-content {
+    margin: 0 0 10px 0;
+    padding: 10px;
+}
+
+.tree-handle {
+    padding: 10px;
+    background: $color_boston_blue_approx;
+    color: $white;
+    margin-right: 15px;
+}
+
+tr.angular-ui-tree-empty {
+    height: 100px;
+}
+
+.tree-mode-actions {
+    float: right;
+    margin: -1px -1px 0 0;
+}

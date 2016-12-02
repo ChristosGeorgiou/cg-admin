@@ -10,13 +10,27 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding-top: 50px;
+  padding: 0;
   min-height: 100%;
   width: $sidebar-width;
   z-index: 810;
+  margin-top: $navbar-height;
+  .footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    color: #555;
+    font-size: 0.7em;
+    text-align: center;
+    white-space: nowrap;
+    padding-bottom: 65px;
+    a {
+      color: #666 !important;
+    }
+  }
   //Using disposable variable to join statements with a comma
   $transition-rule: $transition-speed $transition-fn,
-    width $transition-speed $transition-fn;
+  width $transition-speed $transition-fn;
   @include transition-transform($transition-rule);
   @media (max-width: $screen-header-collapse) {
     padding-top: 100px;
@@ -43,7 +57,7 @@
 // remove border from form
 .sidebar-form {
   input:focus {
-        outline: none;
+    outline: none;
     border-color: transparent;
   }
 }
@@ -54,7 +68,7 @@
   width: 100%;
   padding: 10px;
   overflow: hidden;
-  @include clearfix;
+  @include clearfix();
   > .image > img {
     width: 100%;
     max-width: 45px;
@@ -93,8 +107,8 @@
     position: relative;
     margin: 0;
     padding: 0;
-    > a {
-      padding: 7.5px 7.5px 7.5px 11.5px;
+    >a {
+      padding: (($sidebar-menu-height - 20px) / 2);
       display: block;
       > .fa,
       > .glyphicon,
@@ -111,16 +125,24 @@
     }
   }
   li.header {
-    padding: 7.5px 7.5px 7.5px 11.5px;
+    padding: (($sidebar-menu-height - 20px) / 2);
     font-size: 12px;
   }
+  li > a > .fa-angle-left,
   li > a > .pull-right-container > .fa-angle-left {
     width: auto;
     height: auto;
     padding: 0;
     margin-right: 10px;
   }
+  li > a > .fa-angle-left {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -8px;
+  }
   li.active {
+    > a > .fa-angle-left,
     > a > .pull-right-container > .fa-angle-left {
       @include rotate(-90deg);
     }
@@ -151,6 +173,8 @@
           width: 20px;
         }
         > .pull-right-container > .fa-angle-left,
+        > .pull-right-container > .fa-angle-down,
+        > .fa-angle-left,
         > .fa-angle-down {
           width: auto;
         }

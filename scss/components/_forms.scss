@@ -3,11 +3,11 @@
  * ---------------
  */
 .form-control {
-  @include border-radius-same($input-radius);
+  @include border-radius($input-radius);
   box-shadow: none;
   border-color: $gray;
   &:focus {
-    border-color: $light-blue !important;
+    border-color: $light-blue;
     box-shadow: none;
   }
   &::-moz-placeholder,
@@ -29,8 +29,9 @@
     label {
       color: $green;
     }
-    .form-control {
-      border-color: $green !important;
+    .form-control,
+    .input-group-addon {
+      border-color: $green;
       box-shadow: none;
     }
     .help-block {
@@ -42,8 +43,9 @@
     label {
       color: $yellow;
     }
-    .form-control {
-      border-color: $yellow !important;
+    .form-control,
+    .input-group-addon {
+      border-color: $yellow;
       box-shadow: none;
     }
     .help-block {
@@ -55,8 +57,9 @@
     label {
       color: $red;
     }
-    .form-control {
-      border-color: $red !important;
+    .form-control,
+    .input-group-addon {
+      border-color: $red;
       box-shadow: none;
     }
     .help-block {
@@ -68,7 +71,7 @@
 /* Input group */
 .input-group {
   .input-group-addon {
-    @include border-radius-same($input-radius);
+    @include border-radius($input-radius);
     border-color: $gray;
     background-color: #fff;
   }
@@ -78,7 +81,7 @@
 .btn-group-vertical {
   .btn {
     &.btn-flat:first-of-type, &.btn-flat:last-of-type {
-      @include border-radius-same(0);
+      @include border-radius(0);
     }
   }
 }

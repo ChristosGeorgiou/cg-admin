@@ -25,10 +25,6 @@
 }
 
 //Navbar custom dropdown menu
-.navbar-nav .dropdown-menu {
-  @include box-shadow(none);
-}
-
 .navbar-nav > .notifications-menu,
 .navbar-nav > .messages-menu,
 .navbar-nav > .tasks-menu {
@@ -45,7 +41,7 @@
   }
   //Define header class
   > .dropdown-menu > li.header {
-    @include border-radius(4px, 4px, 0, 0);
+    @include border-radius-sides(4px, 4px, 0, 0);
     background-color: #ffffff;
     padding: 7px 10px;
     border-bottom: 1px solid #f4f4f4;
@@ -55,15 +51,15 @@
 
   //Define footer class
   > .dropdown-menu > li.footer > a {
-    @include border-radius(0px, 0px, 4px, 4px);
+    @include border-radius-sides(0, 0, 4px, 4px);
     font-size: 12px;
     background-color: #fff;
     padding: 7px 10px;
     border-bottom: 1px solid #eeeeee;
-    color: #444!important;
+    color: #444 !important;
     @media (max-width: $screen-sm-max) {
-      background: #fff!important;
-      color: #444!important;
+      background: #fff !important;
+      color: #444 !important;
     }
     text-align: center;
     //Hover state
@@ -151,7 +147,7 @@
         color: #888888;
       }
 
-      @include clearfix;
+      @include clearfix();
 
     }
 
@@ -224,7 +220,7 @@
       padding: 15px;
       border-bottom: 1px solid #f4f4f4;
       border-top: 1px solid #dddddd;
-      @include clearfix;
+      @include clearfix();
       a {
         color: #444 !important;
         @media (max-width: $screen-sm-max) {
@@ -238,7 +234,7 @@
     > .user-footer {
       background-color: #f9f9f9;
       padding: 10px;
-      @include clearfix;
+      @include clearfix();
       .btn-default {
         color: #666666;
         &:hover {
@@ -268,12 +264,12 @@
 /* Add fade animation to dropdown menus by appending
  the class .animated-dropdown-menu to the .dropdown-menu ul (or ol)*/
 .open:not(.dropup) > .animated-dropdown-menu {
-  @include backface-visibility(visible);
-  // @include animation(flipInX .7s both);
+  backface-visibility: visible !important;
+  @include animation(flipInX .7s both);
+
 }
 
-/*
-$keyframes flipInX {
+@keyframes flipInX {
   0% {
     transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
     transition-timing-function: ease-in;
@@ -298,7 +294,8 @@ $keyframes flipInX {
     transform: perspective(400px);
   }
 }
-$-webkit-keyframes flipInX {
+
+@-webkit-keyframes flipInX {
   0% {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
     -webkit-transition-timing-function: ease-in;
@@ -323,7 +320,6 @@ $-webkit-keyframes flipInX {
     -webkit-transform: perspective(400px);
   }
 }
-*/
 
 /* Fix dropdown menu in navbars */
 .navbar-custom-menu > .navbar-nav {
@@ -335,6 +331,8 @@ $-webkit-keyframes flipInX {
       left: auto;
     }
   }
+}
+
 @media (max-width: $screen-sm-max) {
   .navbar-custom-menu > .navbar-nav {
     float: right;
@@ -349,5 +347,4 @@ $-webkit-keyframes flipInX {
       }
     }
   }
-}
 }
