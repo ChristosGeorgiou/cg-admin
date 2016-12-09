@@ -2,15 +2,14 @@
     'use strict';
 
     angular
-        .module('cg.admin')
-        .directive('contentWrapper', contentWrapper)
+        .module('cgadmin')
+        .directive('cgadminContent', cgadminContent)
 
-    contentWrapper.$inject = ['$window'];
-
-    function contentWrapper($window) {
+    /* @ngInject */
+    function cgadminContent($window, cgadminConfig) {
 
         var directive = {
-            restrict: 'C',
+            restrict: 'A',
             link: link
         };
 
@@ -29,11 +28,11 @@
 
         function fix(element) {
 
-            var header = 35;
+            var header = cgadminConfig.topbarHeight;
             if (window.innerWidth < 767) {
                 header *= 2;
             }
-            
+
             element.css({
                 marginTop: header + 'px',
                 height: window.innerHeight - header + 'px'

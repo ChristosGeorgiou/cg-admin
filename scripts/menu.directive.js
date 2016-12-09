@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('cg.admin')
-        .directive('pushMenu', pushMenu);
+        .module('cgadmin')
+        .directive('cgadminMenu', cgadminMenu);
 
-    pushMenu.$inject = ['$window', '$document'];
-    function pushMenu($window, $document) {
+    /* @ngInject */
+    function cgadminMenu($window, $document) {
 
         var screenSizes = {
             xs: 480,

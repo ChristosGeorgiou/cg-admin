@@ -25,6 +25,7 @@ gulp.task('sass', function () {
 		.pipe(sass().on('error', sass.logError))
 		.pipe(minify())
 		.pipe(rename({
+			basename:"cg-admin",
 			suffix: '.min',
 			extname: '.css'
 		}))
@@ -45,6 +46,11 @@ gulp.task('angular', function () {
 		}))
 		.pipe(uglify({
 			mangle: false
+		}))
+		.pipe(rename({
+			basename:"cg-admin",
+			suffix: '.min',
+			extname: '.js'
 		}))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./dist'));

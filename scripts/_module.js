@@ -2,6 +2,6 @@
     'use strict';
 
     angular
-        .module('cg.admin', [])
+        .module('cgadmin', [])
         
 })();
