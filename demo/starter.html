@@ -3,41 +3,19 @@
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html>
+<html ng-app="app">
 
 <head>
   <meta charset="UTF-8">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>CG-Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
-  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
-  <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-  <link rel="stylesheet" href="/dist/style.min.css">
+  <link rel="stylesheet" href="/dist/cg-admin.min.css">
 
 </head>
-<!--
-  BODY TAG OPTIONS:
-  =================
-  Apply one or more of the following classes to get the
-  desired effect
-  |---------------------------------------------------------|
-  | SKINS         | skin-blue                               |
-  |               | skin-black                              |
-  |               | skin-purple                             |
-  |               | skin-yellow                             |
-  |               | skin-red                                |
-  |               | skin-green                              |
-  |---------------------------------------------------------|
-  |LAYOUT OPTIONS | fixed                                   |
-  |               | layout-boxed                            |
-  |               | layout-top-nav                          |
-  |               | sidebar-collapse                        |
-  |               | sidebar-mini                            |
-  |---------------------------------------------------------|
-  -->
-<link rel="stylesheet" href="/dist/skins/skin-blue.min.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,27 +24,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
-<!--
-BODY TAG OPTIONS:
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
-
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="fixed sidebar-mini">
 
   <div class="wrapper">
 
@@ -80,7 +38,7 @@ desired effect
       
       <nav class="navbar navbar-static-top" role="navigation">
 
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <a href="#" cgadmin-toggle-menu class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
         <!-- Navbar Right Menu -->
@@ -302,7 +260,7 @@ desired effect
     </aside>
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div cgadmin-content-wrapper class="content-wrapper">
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
@@ -412,18 +370,15 @@ desired effect
        immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
   </div>
-  <!-- ./wrapper -->
 
-  <!-- REQUIRED JS SCRIPTS -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js" type="text/javascript"></script>
+  <script src="/dist/cg-admin.min.js" type="text/javascript"></script>
 
-  <script src="/bower_components/jquery/dist/jquery.js"></script>
-  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
-  <script src="/demo/assets/javascripts/app.js" type="text/javascript"></script>
-
-  <!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. Slimscroll is required when using the
-     fixed layout. -->
+  <script>
+    angular.module("app",[
+      "cg.admin",
+    ])
+  </script>
 </body>
 
 </html>

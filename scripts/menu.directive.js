@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('cgadmin')
-        .directive('cgadminMenu', cgadminMenu);
+        .module('cg.admin')
+        .directive('cgadminToggleMenu', cgadminToggleMenu);
 
     /* @ngInject */
-    function cgadminMenu($window, $document) {
+    function cgadminToggleMenu($window, $document) {
 
         var screenSizes = {
             xs: 480,

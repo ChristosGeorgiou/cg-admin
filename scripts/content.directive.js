@@ -2,11 +2,11 @@
     'use strict';
 
     angular
-        .module('cgadmin')
-        .directive('cgadminContent', cgadminContent)
+        .module('cg.admin')
+        .directive('cgadminContentWrapper', cgadminContentWrapper)
 
     /* @ngInject */
-    function cgadminContent($window, cgadminConfig) {
+    function cgadminContentWrapper($window, cgadminConfig) {
 
         var directive = {
             restrict: 'A',
