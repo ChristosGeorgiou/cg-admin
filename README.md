@@ -1,9 +1,41 @@
 # CG Admin Template
 
+An AngularJS template based on the AdminLTE
+
 *This template is  based on the famous [Almsaeed Studio's AdminLTE](https://github.com/almasaeed2010/AdminLTE) and the SCSS vesrion of [aguegu's AdminLTE](https://github.com/aguegu/AdminLTE)*
 
 - Some angularjs directives were created in order to be jQuery-free
 - A few more sass components where included
+
+# Installation
+
+Start with installing the package
+```
+npm install --save cg-admin
+```
+
+Include the files in your html
+
+```html
+<head>
+  <link rel="stylesheet" href="/node_modules/cg-admin/dist/cg-admin.min.css">
+<head>
+<body>
+  <script src="/node_modules/cg-admin/dist/cg-admin.min.js"></script>
+</body>
+```
+
+After include it to your angular application
+
+```js
+angular
+    .module('app', [
+        'cg.admin',
+    ]);
+```
+
+You make check the demo/starter file for how to use it
+
 
 # The MIT License (MIT)
 
