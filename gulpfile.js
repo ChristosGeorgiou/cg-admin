@@ -23,9 +23,14 @@ gulp.task('sass', function () {
 			read: true,
 		})
 		.pipe(sass().on('error', sass.logError))
+		.pipe(rename({
+			basename: "cg-admin",
+			extname: '.css'
+		}))
+		.pipe(gulp.dest('./dist'))
 		.pipe(minify())
 		.pipe(rename({
-			basename:"cg-admin",
+			basename: "cg-admin",
 			suffix: '.min',
 			extname: '.css'
 		}))
@@ -38,17 +43,18 @@ gulp.task('angular', function () {
 	return gulp.src('./scripts/**/*.js')
 		.pipe(angularFilesort())
 		.pipe(sourcemaps.init())
-		.pipe(concat('app.min.js', {
+		.pipe(concat('cg-admin.js', {
 			newLine: ';'
 		}))
 		.pipe(ngAnnotate({
 			add: true
 		}))
+		.pipe(gulp.dest('./dist'))
 		.pipe(uglify({
 			mangle: false
 		}))
 		.pipe(rename({
-			basename:"cg-admin",
+			basename: "cg-admin",
 			suffix: '.min',
 			extname: '.js'
 		}))
