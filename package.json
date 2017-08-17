@@ -1,26 +1,29 @@
 {
   "name": "cg-admin",
   "version": "0.2.8",
+  "description": "An AngularJS template based on the AdminLTE",
+  "author": {
+    "name": "Christos Georgiou",
+    "email": "georgiou.christos@outlook.com",
+    "url": "http://christosgeorgiou.gr"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/ChristosGeorgiou/cg-admin.git"
   },
-  "license": "MIT",
-  "depentencies": {
+  "dependencies": {
     "bootstrap-sass": "^3.3.7"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-angular-filesort": "^1.1.1",
-    "gulp-clean-css": "^2.0.13",
+    "gulp-clean-css": "^3.7.0",
     "gulp-concat": "^2.6.1",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0"
-  },
-  "dependencies": {
-    "bootstrap-sass": "^3.3.7"
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0"
   }
 }
