@@ -12,6 +12,13 @@
     "type": "git",
     "url": "git://github.com/ChristosGeorgiou/cg-admin.git"
   },
+  "files": [
+    "dist/cg-admin.css",
+    "dist/cg-admin.min.css",
+    "dist/cg-admin.js",
+    "dist/cg-admin.min.js",
+    "dist/cg-admin.min.js.map"
+  ],
   "dependencies": {
     "bootstrap-sass": "^3.3.7"
   },
